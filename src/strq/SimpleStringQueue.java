@@ -29,8 +29,9 @@ public class SimpleStringQueue implements StringQueue
             throw new RuntimeException("Out of bounds!");
         }
 
+        String dequeueString = s.substring(0, length);
         s = s.substring(length);
-        return s;
+        return dequeueString;
     }
 
     @Override

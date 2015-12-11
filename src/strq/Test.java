@@ -1,5 +1,7 @@
 package strq;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 public class Test
 {
 
@@ -20,28 +22,37 @@ public class Test
         queue.enqueue("  ");
         queue.enqueue("This is a test.");
 
+        System.out.println(queue);
 
         if(queue.length() != 30)
         {
             throw new AssertionError();
         }
         String s = queue.dequeue(10);
-        System.out.println(s.length());
+
+
+        System.out.println(queue.length());
 
         if(queue.length() != 20)
         {
             throw new AssertionError();
         }
-        if(! s.equals("Hello, wor"))
+
+        System.out.println(s);
+
+        if(!s.equals("Hello, wor"))
         {
             throw new AssertionError();
         }
         s = queue.dequeue(10);
+
+        System.out.println(s);
+
         if(queue.length() != 10)
         {
             throw new AssertionError();
         }
-        if(! s.equals("ld!  This "))
+        if(!s.equals("ld!  This "))
         {
             throw new AssertionError();
         }
@@ -55,7 +66,7 @@ public class Test
         {
             throw new AssertionError();
         }
-        if(! s.equals("is a test.  All done."))
+        if(!s.equals("is a test.  All done."))
         {
             throw new AssertionError();
         }
