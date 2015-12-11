@@ -68,18 +68,19 @@ public class Dealer {
         for (int i = 0; i < numPlayers; i++)
         {
 
-            int item = new Random().nextInt(52); // In real life, the Random object should be rather more shared than this
-            int count = 0;
+            int item = new Random().nextInt(52);
+
             List<Card> hand = new ArrayList<Card>();
 
-            for (int j = 0; j < numCards; j++)
+            for (int count = 0; count < numCards; count++)
             {
+
 
                 for(Card c : deck)
                 {
                     if (count == item)
                         hand.add(c);
-                    count = count + 1;
+                    count++;
                 }
             }
 
